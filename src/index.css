@@ -1,0 +1,65 @@
+@import './styles/utils.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 text-white px-4 py-2.5 rounded-xl font-medium hover:bg-primary-700 
+           transition-all duration-200 flex items-center justify-center gap-2 
+           disabled:bg-gray-400 disabled:cursor-not-allowed focus:outline-none 
+           focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 
+           active:scale-[0.98] shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary-600 border border-primary-200 px-4 py-2.5 rounded-xl 
+           font-medium hover:bg-primary-50 transition-all duration-200 
+           flex items-center justify-center gap-2 shadow-sm hover:shadow-md 
+           active:scale-[0.98];
+  }
+
+  .input-primary {
+    @apply block w-full px-4 py-2.5 border border-gray-300 rounded-xl 
+           focus:ring-2 focus:ring-primary-500 focus:border-transparent 
+           shadow-sm transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 
+           border border-gray-100 hover:border-primary-100;
+  }
+
+  .glass-effect {
+    @apply bg-white/95 backdrop-blur-md border-b border-gray-200;
+  }
+
+  .bottom-nav-item {
+    @apply flex flex-col items-center text-gray-600 hover:text-primary-600 
+           transition-colors relative px-2 py-1.5;
+  }
+
+  .bottom-nav-icon {
+    @apply h-6 w-6 mb-1;
+  }
+
+  .bottom-nav-label {
+    @apply text-xs font-medium;
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
